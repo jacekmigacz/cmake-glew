@@ -14,13 +14,13 @@
 # ``GLEW_INCLUDE_DIR``
 #  Path to the GLEW include directory.
 # ``GLEW_LIBRARY``
-#  Paths to the GLEW library.
+#  Path to the GLEW library.
 # ``GLEW_MX_LIBRARY``
-#  Paths to the GLEW MX (Multiple Rendering Contexts) library.
-# ``GLEW_SHARED_LIBRARY_PATH``
-#  Paths to the GLEW shared library.
-# ``GLEW_MX_SHARED_LIBRARY_PATH``
-#  Paths to the GLEW MX (Multiple Rendering Contexts) shared library.
+#  Path to the GLEW MX (Multiple Rendering Contexts) library.
+# ``GLEW_SHARED_LIBRARY``
+#  Path to the GLEW shared library.
+# ``GLEW_MX_SHARED_LIBRARY``
+#  Path to the GLEW MX (Multiple Rendering Contexts) shared library.
 
 
 #=============================================================================
@@ -40,15 +40,15 @@ if (WIN32)
     if (DEFINED ENV{GLEW_ROOT_DIR})
         find_path(GLEW_INCLUDE_DIR "GL/glew.h" HINTS $ENV{GLEW_ROOT_DIR} PATH_SUFFIXES include DOC "Path to the GLEW include directory.")
         if (CMAKE_SIZEOF_VOID_P EQUAL 4)
-            find_library(GLEW_LIBRARY "glew32" HINTS $ENV{GLEW_ROOT_DIR} PATH_SUFFIXES "lib/Release/Win32" DOC "Paths to the GLEW library.")
-            find_library(GLEW_MX_LIBRARY "glew32mx" HINTS $ENV{GLEW_ROOT_DIR} PATH_SUFFIXES "lib/Release MX/Win32" DOC "Paths to the GLEW MX library.")
-            find_file(GLEW_SHARED_LIBRARY_PATH "glew32.dll" HINTS $ENV{GLEW_ROOT_DIR} PATH_SUFFIXES "bin/Release/Win32" DOC "Paths to the GLEW shared library.")
-            find_file(GLEW_MX_SHARED_LIBRARY_PATH "glew32mx.dll" HINTS $ENV{GLEW_ROOT_DIR} PATH_SUFFIXES "bin/Release MX/Win32" DOC "Paths to the GLEW MX shared library.")
+            find_library(GLEW_LIBRARY "glew32" HINTS $ENV{GLEW_ROOT_DIR} PATH_SUFFIXES "lib/Release/Win32" DOC "Path to the GLEW library.")
+            find_library(GLEW_MX_LIBRARY "glew32mx" HINTS $ENV{GLEW_ROOT_DIR} PATH_SUFFIXES "lib/Release MX/Win32" DOC "Path to the GLEW MX library.")
+            find_file(GLEW_SHARED_LIBRARY "glew32.dll" HINTS $ENV{GLEW_ROOT_DIR} PATH_SUFFIXES "bin/Release/Win32" DOC "Path to the GLEW shared library.")
+            find_file(GLEW_MX_SHARED_LIBRARY "glew32mx.dll" HINTS $ENV{GLEW_ROOT_DIR} PATH_SUFFIXES "bin/Release MX/Win32" DOC "Path to the GLEW MX shared library.")
         elseif (CMAKE_SIZEOF_VOID_P EQUAL 8)
-            find_library(GLEW_LIBRARY "glew32" HINTS $ENV{GLEW_ROOT_DIR} PATH_SUFFIXES "lib/Release/x64" DOC "Paths to the GLEW library.")
-            find_library(GLEW_MX_LIBRARY "glew32mx" HINTS $ENV{GLEW_ROOT_DIR} PATH_SUFFIXES "lib/Release MX/x64" DOC "Paths to the GLEW MX library.")
-            find_file(GLEW_SHARED_LIBRARY_PATH "glew32.dll" HINTS $ENV{GLEW_ROOT_DIR} PATH_SUFFIXES "bin/Release/x64" DOC "Paths to the GLEW shared library.")
-            find_file(GLEW_MX_SHARED_LIBRARY_PATH "glew32mx.dll" HINTS $ENV{GLEW_ROOT_DIR} PATH_SUFFIXES "bin/Release MX/x64" DOC "Paths to the GLEW MX shared library.")
+            find_library(GLEW_LIBRARY "glew32" HINTS $ENV{GLEW_ROOT_DIR} PATH_SUFFIXES "lib/Release/x64" DOC "Path to the GLEW library.")
+            find_library(GLEW_MX_LIBRARY "glew32mx" HINTS $ENV{GLEW_ROOT_DIR} PATH_SUFFIXES "lib/Release MX/x64" DOC "Path to the GLEW MX library.")
+            find_file(GLEW_SHARED_LIBRARY "glew32.dll" HINTS $ENV{GLEW_ROOT_DIR} PATH_SUFFIXES "bin/Release/x64" DOC "Path to the GLEW shared library.")
+            find_file(GLEW_MX_SHARED_LIBRARY "glew32mx.dll" HINTS $ENV{GLEW_ROOT_DIR} PATH_SUFFIXES "bin/Release MX/x64" DOC "Path to the GLEW MX shared library.")
         endif ()
     else ()
         message(WARNING "GLEW_ROOT_DIR is not set.")
@@ -58,4 +58,4 @@ endif ()
 include(FindPackageHandleStandardArgs)
 find_package_handle_standard_args(GLEW REQUIRED_VARS GLEW_INCLUDE_DIR GLEW_LIBRARY GLEW_MX_LIBRARY)
 
-mark_as_advanced(GLEW_INCLUDE_DIR GLEW_LIBRARY GLEW_MX_LIBRARY GLEW_SHARED_LIBRARY_PATH GLEW_MX_SHARED_LIBRARY_PATH)
+mark_as_advanced(GLEW_INCLUDE_DIR GLEW_LIBRARY GLEW_MX_LIBRARY GLEW_SHARED_LIBRARY GLEW_MX_SHARED_LIBRARY)
